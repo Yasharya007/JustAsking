@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <div class="question">Will you opt for NIT Allahabad?</div>
+        <div class="image">
+            <img src="asking.gif" alt=""/>
+        </div>
+        <div class="ans">
+            <button class="yes" onclick="yesfnc()" onmouseenter="readyfnc()" onmouseleave="nrml()">Yes</button>
+        <button class="no" onmouseenter="nofnc()" onmousemove="nofnc()">No</button>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const nobutton=document.querySelector(".no");
+    const image=document.querySelector("img");
+    let agree=false;
+    function yesfnc(){
+        image.src="veryhappy.gif"
+        agree=true;
+    }
+    function nofnc(){
+        const rnd=Math.floor(Math.random()*40);
+        const mnd=Math.floor(Math.random()*33);
+        nobutton.style.left=`${rnd}vw`;
+        nobutton.style.top=`${mnd}vh`;
+        image.src="cats-sad.gif"
+    }
+    function nrml(){
+        if(agree)return;
+        image.src="asking.gif"
+    }
+    function readyfnc(){
+        image.src="pressit.gif"
+    }
+</script>
+</html>
