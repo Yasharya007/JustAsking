@@ -6,8 +6,10 @@ body{
     background-color: rgba(61, 234, 182, 0.499);
     display: flex;
     justify-content: center;
+    font-family:cursive;
 }
 .content{
+    position: relative;
     height: 75vh;
     width: 50vw;
     background-color: rgb(169, 202, 230);
@@ -35,7 +37,7 @@ img{
     display: flex;
     justify-content: center;
     color: rgb(217, 47, 112);
-    font-family:cursive;
+    /* font-family:cursive; */
 }
 .ans{
     display: flex;
@@ -51,7 +53,7 @@ button{
     border-radius: 12px;
     font-weight: 600; 
     font-size: 1vw;
-    font-family: cursive;
+    /* font-family: cursive; */
 }
 .yes{
     background-color: rgba(48, 155, 48, 0.944);
@@ -70,3 +72,37 @@ button{
     transition: linear 0.2s;
     color: bisque;
 }
+.result{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: 75vh;
+        display: none;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        background-color: rgba(40, 38, 23, 0.95);
+        animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
+        p{
+            /* background-color: aqua; */
+            font-size: 3vw;
+            font-weight: 600;
+            color: aliceblue;
+            /* text-align: center; */
+            /* width: 100%; */
+        }
+}
+@keyframes pop-in {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

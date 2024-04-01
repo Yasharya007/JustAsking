@@ -16,16 +16,23 @@
             <button class="yes" onclick="yesfnc()" onmouseenter="readyfnc()" onmouseleave="nrml()">Yes</button>
         <button class="no" onmouseenter="nofnc()" onmousemove="nofnc()">No</button>
         </div>
+        <div class="result">
+            <img src="veryhappy.gif" alt=""/>
+            <p>I knew it !</p>
+        </div>
         
     </div>
 </body>
 <script>
     const nobutton=document.querySelector(".no");
+    const yesbutton=document.querySelector(".yes");
     const image=document.querySelector("img");
+    const result=document.querySelector(".result");
     let agree=false;
     function yesfnc(){
         image.src="veryhappy.gif"
         agree=true;
+        result.style.display="flex";
     }
     function nofnc(){
         const rnd=Math.floor(Math.random()*40);
